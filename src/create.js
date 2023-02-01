@@ -1,18 +1,17 @@
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React,{ useState } from "react";
+// import { useHistory } from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('mario');
   const [ispending,setIspending]= useState('false');
-//   const history= useHistory();
+  //   const history= useHistory();
 
 
   const handlesubmit=(e)=>{
     e.preventDefault();
     const blog={title,body,author};
-    
     setIspending(true);
 
     fetch('http://localhost:8000/blogs/',
@@ -23,7 +22,7 @@ const Create = () => {
     }).then(()=>{
       console.log("New blog added!")  
       setIspending(false);
-    //   history.push('/');
+    //   history.push('/');n
     })
   }
 

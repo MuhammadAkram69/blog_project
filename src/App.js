@@ -1,16 +1,13 @@
-import logo from './logo.svg';
-// import './App.css';
+import React from 'react';
 import Navbar from './Navbar';
 import Home from './Home';
-import { BrowserRouter as Router,Route,Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Create from './create';
 import BlogDetails from './BlogDetails'
 import NotFound from './NotFound';
 
 function App() {
-  const title="WELCOME TO CODING WORLD";
-  const likes=1000;
-  const link= "https://www.google.com/";
+  
 
 
   return (
@@ -18,24 +15,20 @@ function App() {
       <div className="App">
         <Navbar />
         <div className="content">
-          <Switch>
-             <Route  exact path="/">
-               <Home />
-             </Route>
+          <Routes>
+             <Route  exact path="/" element={<Home />}/>
+              
              
-             <Route path="/create">
-               <Create/>
-             </Route>
+             <Route path="/create" element={<Create/>}/>
+               
 
-             <Route path="/blogs/:id">
-               <BlogDetails />
-             </Route>
+             <Route path="/blogs/:id" element={<BlogDetails />}/>
+               
 
-             <Route path="*">
-               <NotFound />
-             </Route>
+             <Route path="*" element ={<NotFound />} />
+               
 
-          </Switch>
+          </Routes>
         </div>
       </div>
     </Router>

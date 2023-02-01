@@ -1,4 +1,4 @@
-import {useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import BlogList from './Bloglist';
 import useFetch from './UseFetch';
 
@@ -8,7 +8,7 @@ const Home = () => {
     const [age,Setage]= useState(24);
     // const [Ispending,SetIsPending]=useState(true);
     // const [error, SetError]=useState(null);
-    const {data:blogs,Ispending,error} =useFetch('http://localhost:8000/blogs')
+    const {data:blogs,Ispending,error} =useFetch('http://localhost:9000/blogs')
 
     const handleclick=() =>{
         SetName('Rafay')

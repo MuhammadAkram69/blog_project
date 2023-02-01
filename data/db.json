@@ -13,17 +13,6 @@
       "id": 2
     },
     {
-      "name": "water bottle",
-      "price": "3000",
-      "id": 4
-    },
-    {
-      "title": "asdfghjk",
-      "body": "hfkgdfjghfghuirnvfdnjhnfdh",
-      "author": "iqbal",
-      "id": 5
-    },
-    {
       "title": "firstone",
       "body": "dlsjfksjfklsjflsdfklsdf",
       "author": "mario",
@@ -34,6 +23,12 @@
       "body": "dfghv\nfjjdfgnfj\nkfgdjkoj",
       "author": "iqbal",
       "id": 7
+    },
+    {
+      "title": "error resolved",
+      "body": "It took too much time but learn so many things",
+      "author": "iqbal",
+      "id": 8
     }
   ]
 }
