@@ -1,29 +1,30 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
+import { URL } from "./axios";
 // import { useHistory } from "react-router-dom";
 
 const Create = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [author, setAuthor] = useState('mario');
-  const [ispending,setIspending]= useState('false');
+  const [ispending, setIspending] = useState('false');
   //   const history= useHistory();
 
 
-  const handlesubmit=(e)=>{
+  const handlesubmit = (e) => {
     e.preventDefault();
-    const blog={title,body,author};
+    const blog = { title, body, author };
     setIspending(true);
 
-    fetch('http://localhost:8000/blogs/',
-    {
-    method:'POST',
-    headers : {"Content-Type":"application/json"},
-    body: JSON.stringify(blog)
-    }).then(()=>{
-      console.log("New blog added!")  
-      setIspending(false);
-    //   history.push('/');n
-    })
+    fetch(`${URL}blogs/blogs`,
+      {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(blog)
+      }).then(() => {
+        console.log("New blog added!")
+        setIspending(false);
+        //   history.push('/');n
+      })
   }
 
   return (
@@ -31,9 +32,9 @@ const Create = () => {
       <h2>Add a New Blog</h2>
       <form onSubmit={handlesubmit}>
         <label>Blog title:</label>
-        <input 
-          type="text" 
-          required 
+        <input
+          type="text"
+          required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
@@ -58,5 +59,5 @@ const Create = () => {
     </div>
   );
 }
- 
+
 export default Create;
